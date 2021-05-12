@@ -1,0 +1,36 @@
+<div class="mx-2 w-100">
+  <div class="banner">
+    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" alt=""
+      style="height:250px; width: 100%; object-fit: cover; position: relative">
+  </div>
+  <div class="test d-flex justify-content-between" style="margin-left:87px; position:absolute; top:143px; width:80%">
+    <div class="details">
+      <div class="card my-2 p-4">
+        <h2>
+          <%= @flat.name%>
+        </h2>
+        <%= @flat.address %>
+      </div>
+      <div class="card flat-description p-4 my-2">
+        <h2>A bit more about this flat</h2>
+        <%= @flat.description %>
+      </div>
+      <%= link_to "Edit" , edit_flat_path(@flat.id) %>
+        <%= link_to "Delete" , flat_path(@flat.id), method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+    <div class="price card my-2 p-4 d-flex flex-column justify-content-between" style="margin-left: 105px; width: 273px;">
+      <h5>Book this place!</h5>
+      <div class=" card flat_number d-flex p-4">
+        <div class="mx-2">
+          <i class="fas fa-euro-sign"></i>
+          <%= @flat.price_per_night %>
+        </div>
+        <div class="mx-2">
+          <i class="fas fa-user-friends"></i>
+          <%= @flat.number_of_guests %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
